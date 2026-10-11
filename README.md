@@ -125,5 +125,14 @@ tests/                  автотесты
 
 - Песочница на уровне Python (audit hook, урезанные builtins, лимиты ОС) хорошо защищает учебный проект, но это не полноценная изоляция уровня контейнера. Для продакшена код агента стоит запускать в отдельном контейнере, gVisor или облачном code interpreter.
 - Эвристический детектор injection-фраз ловит типовые атаки, но не все. Поэтому главная защита — архитектура: недоверенные данные отделены от инструкций, у кода нет доступа к сети и секретам, отчёт проходит очистку.
+
+Скриншоты:
+
+<img width="1920" height="1103" alt="image" src="https://github.com/user-attachments/assets/03e97626-b57c-4d0f-84f3-c50eb796dca4" />
+<img width="1920" height="1104" alt="image" src="https://github.com/user-attachments/assets/ca78ff49-2f8d-4a2a-8563-d049c6ee9cef" />
+<img width="1920" height="1105" alt="image" src="https://github.com/user-attachments/assets/22313e09-d390-4d3a-b954-69bb17ef8f09" />
+<img width="1920" height="1103" alt="image" src="https://github.com/user-attachments/assets/b6983a0a-f905-4ea7-871f-3e4497d00240" />
+<img width="1916" height="1101" alt="image" src="https://github.com/user-attachments/assets/73a38fd3-0cf5-4115-91f3-1f029d9700b9" />
+
 - Переменные между запусками кода не сохраняются, промежуточные результаты агент сохраняет в файлы рабочей папки.
 - Лимит памяти (`RLIMIT_AS`) работает только на Linux и macOS. На Windows действуют только тайм-аут и остальные слои защиты.
